@@ -1,29 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, inject } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent {
-  
-  myImages = [
-    {src: "./../../assets/1.jpg"},
-    {src: "./../../assets/2.jpg"},
-    {src: "./../../assets/3.jpg"},
-    {src: "./../../assets/4.jpg"},
-    {src: "./../../assets/5.jpg"},
-  ]
 
-  myConfig = [
-    {
-      "slidesToShow": 3,
-      "slidesToScroll": 1,
-      "autoplay": true,
-      "autoplaySpeed": 5000,
-      "pauseOnHover": true,
-      "infinite": true
-    }
+export class TestComponent implements OnInit{
 
-  ]
+  constructor(private overlay: OverlayContainer) {}
+
+  toggleControl = new FormControl(false)
+  @HostBinding('class') className = ''
+  darkClassName = 'theme-dark'
+  lightClassName = 'theme-light'
+
+  ngOnInit(): void {
+
+      this.toggleControl.valueChanges.subscribe((darkMode) => {
+        this.className = darkMode ? this.darkClassName : this.lightClassName
+
+        if(darkMode) {
+          this.overlay.getContainerElement().classList.add(this.darkClassName)
+
+        } else {
+          this.overlay.getContainerElement().classList.remove(this.darkClassName)
+        }
+
+      })
+  }
+
 }
+

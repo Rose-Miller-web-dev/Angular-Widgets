@@ -20,9 +20,8 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <mat-slide-toggle>Slide me!</mat-slide-toggle>
-
+      <mat-slide-toggle [formControl]="toggleControl" >Slide me!</mat-slide-toggle>
     </mat-toolbar>
-    <app-mat-adderess></app-mat-adderess>
+    
   </mat-sidenav-content>
 </mat-sidenav-container>

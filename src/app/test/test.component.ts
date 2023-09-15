@@ -10,27 +10,26 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 
 export class TestComponent implements OnInit{
 
-  constructor(private overlay: OverlayContainer) {}
-
-  toggleControl = new FormControl(false)
+  switchTheme = new FormControl(false)
   @HostBinding('class') className = ''
-  darkClassName = 'theme-dark'
-  lightClassName = 'theme-light'
+  darkClass = 'theme-dark'
+  lightClass = 'theme-light'
 
+  constructor(private overlay: OverlayContainer) {}
   ngOnInit(): void {
+    
+    this.switchTheme.valueChanges.subscribe((currentMode) => {
+      this.className = currentMode ? this.darkClass : this.lightClass
 
-      this.toggleControl.valueChanges.subscribe((darkMode) => {
-        this.className = darkMode ? this.darkClassName : this.lightClassName
+      if(currentMode) {
+        this.overlay.getContainerElement().classList.add(this.darkClass)
+      }
 
-        if(darkMode) {
-          this.overlay.getContainerElement().classList.add(this.darkClassName)
+      else {
+        this.overlay.getContainerElement().classList.remove(this.darkClass)
+      }
+    })
 
-        } else {
-          this.overlay.getContainerElement().classList.remove(this.darkClassName)
-        }
-
-      })
   }
-
 }
 

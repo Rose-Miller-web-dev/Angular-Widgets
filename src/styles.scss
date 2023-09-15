@@ -1,3 +1,4 @@
+
 @use '@angular/material' as mat;
 
 @include mat.core();
@@ -17,21 +18,21 @@ $my-theme: mat.define-light-theme((
 ));
 
 $my-theme-dark: mat.define-dark-theme((
-  color: (
-    primary: $my-primary,
-    accent: $my-accent,
-    warn: $my-warn,
-  ),
-  typography: mat.define-typography-config(),
-  density: 0,
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
 ));
 
 .theme-dark {
-  @include mat.all-component-colors($my-theme-dark);
+  @include mat.all-component-colors($my-theme-dark)
 }
 
 .theme-light {
-  @include mat.all-component-colors($my-theme);
+  @include mat.all-component-colors($my-theme)
 }
 
 .pdfViewer.singlePageView .page {

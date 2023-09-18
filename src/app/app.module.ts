@@ -8,6 +8,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { PdfComponent } from './pdf/pdf.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CommonModule } from '@angular/common';
@@ -26,9 +27,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle'
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { StarsComponent } from './stars/stars.component'
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     SkltloaderComponent,
@@ -37,7 +40,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
     CarouselComponent,
     ThemeComponent,
     MaterialComponent,
-    MatAdderessComponent
+    MatAdderessComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SkltloaderComponent } from './skltloader/skltloader.component';
@@ -7,8 +7,8 @@ import { TestComponent } from './test/test.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { PdfComponent } from './pdf/pdf.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import {CdkDrag} from '@angular/cdk/drag-drop'
 
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CommonModule } from '@angular/common';
@@ -28,21 +28,25 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { StarsComponent } from './stars/stars.component'
+import { StarsComponent } from './stars/stars.component';
+import { DragandDropComponent } from './dragand-drop/dragand-drop.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
   declarations: [
     AppComponent,
     SkltloaderComponent,
-    TestComponent,
     PdfComponent,
     CarouselComponent,
     ThemeComponent,
     MaterialComponent,
     MatAdderessComponent,
-    StarsComponent
+    StarsComponent,
+    TestComponent,
+    DragandDropComponent,
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -63,7 +67,7 @@ import { StarsComponent } from './stars/stars.component'
     MatCardModule,
     ReactiveFormsModule,
     MatSlideToggleModule,
-
+    CdkDrag,
   ],
   providers: [],
   bootstrap: [AppComponent]

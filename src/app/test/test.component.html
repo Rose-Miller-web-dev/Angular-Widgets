@@ -1,1 +1,12 @@
-<igc-rating value="ratingVal" min="1" max="5"></igc-rating>
+<div class="container">
+    <mat-form-field appearance="fill">
+        <mat-label>Pick a Date!</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>mm / dd / yy</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker">
+        </mat-datepicker-toggle>
+      
+        <mat-datepicker #picker>
+        </mat-datepicker>
+    </mat-form-field>
+</div>

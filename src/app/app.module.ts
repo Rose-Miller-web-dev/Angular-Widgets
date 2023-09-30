@@ -1,3 +1,5 @@
+
+
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +24,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatAdderessComponent } from './mat-adderess/mat-adderess.component';
-import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
@@ -30,6 +31,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { StarsComponent } from './stars/stars.component';
 import { DragandDropComponent } from './dragand-drop/dragand-drop.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -45,9 +53,14 @@ import { DragandDropComponent } from './dragand-drop/dragand-drop.component';
     StarsComponent,
     TestComponent,
     DragandDropComponent,
+    DatepickerComponent,
   ],
 
   imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     BrowserModule,
     HttpClientModule,
     NgxSkeletonLoaderModule,
@@ -61,7 +74,6 @@ import { DragandDropComponent } from './dragand-drop/dragand-drop.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatInputModule,
     MatSelectModule,
     MatRadioModule,
     MatCardModule,

@@ -18,7 +18,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ThemeComponent } from './theme/theme.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponent } from './material/material.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,6 +37,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialNavComponent } from './material-nav/material-nav.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MaterialsnackbarComponent } from './materialsnackbar/materialsnackbar.component'
+import {MatSnackBarModule} from '@angular/material/snack-bar'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -55,9 +58,14 @@ import { MaterialNavComponent } from './material-nav/material-nav.component';
     DragandDropComponent,
     DatepickerComponent,
     MaterialNavComponent,
+    MaterialsnackbarComponent,
   ],
 
   imports: [
+    FormsModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
@@ -70,7 +78,6 @@ import { MaterialNavComponent } from './material-nav/material-nav.component';
     CommonModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,

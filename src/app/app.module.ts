@@ -18,7 +18,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ThemeComponent } from './theme/theme.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponent } from './material/material.component';
-import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -32,15 +31,19 @@ import { StarsComponent } from './stars/stars.component';
 import { DragandDropComponent } from './dragand-drop/dragand-drop.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialNavComponent } from './material-nav/material-nav.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MaterialsnackbarComponent } from './materialsnackbar/materialsnackbar.component'
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+
 import { FormsModule } from '@angular/forms';
+
+
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -62,12 +65,12 @@ import { FormsModule } from '@angular/forms';
   ],
 
   imports: [
-    FormsModule,
-    MatButtonModule,
     MatSnackBarModule,
-    MatToolbarModule,
-    MatFormFieldModule,
+    MatButtonModule,
     MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatToolbarModule,
     MatDatepickerModule,
     MatNativeDateModule,
     BrowserModule,
@@ -78,7 +81,6 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,

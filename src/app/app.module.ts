@@ -33,11 +33,11 @@ import { StarsComponent } from './stars/stars.component';
 import { DragandDropComponent } from './dragand-drop/dragand-drop.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MaterialNavComponent } from './material-nav/material-nav.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -54,6 +54,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     TestComponent,
     DragandDropComponent,
     DatepickerComponent,
+    MaterialNavComponent,
   ],
 
   imports: [
